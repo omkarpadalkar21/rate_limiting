@@ -11,7 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.util.logging.LogRecord;
+
 
 @Component
 @RequiredArgsConstructor
