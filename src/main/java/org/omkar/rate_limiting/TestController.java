@@ -21,7 +21,7 @@ public class TestController {
         ));
     }
 
-    @GetMapping("/test-rate-limit")
+    @GetMapping("/analytics")
     public ResponseEntity<Map<String, String>> testRateLimit() {
         return ResponseEntity.ok(Map.of(
                 "status", "success",
