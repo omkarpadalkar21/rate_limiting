@@ -8,13 +8,23 @@ services:
     volumes:
       - redis-data:/data
     networks:
-      - app-network
+      - rate_limiting_app-network
     restart: unless-stopped
+
+  spring-boot-app:
+    container_name: spring-rate-limiter
+    image: spring/rate_limiting
+    ports:
+      - "8080:8080"
+    networks:
+      - rate_limiting_app-network
+    depends_on:
+      - redis
 
 volumes:
   redis-data:
     driver: local
 
 networks:
-  app-network:
+  rate_limiting_app-network:
     driver: bridge
